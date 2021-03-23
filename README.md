@@ -1,7 +1,5 @@
 # cli-builder
 
-A generic python CLI framework
-
 A design pattern for creating CLI tools in python.
 
 ```prog``` is the main executable code has a few key attributes:
