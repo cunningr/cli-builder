@@ -37,7 +37,7 @@ def main():
     parser.set_defaults(func=lambda args: parser.print_help())
     parser.add_argument('--version', action='store_true', help='Prints program version')
     parser.add_argument('--debug', action='store_true', help='Enable debug level logging')
-    args, _ = parser.parse_known_args()
+    args, unknown_args = parser.parse_known_args()
     # Execute any top level args
     if args.version:
         show_version()
@@ -52,7 +52,7 @@ def main():
     for key, value in prog.model.items():
         opt = value.add_args(key, subparsers)
         opt.set_defaults(func=value)
-    args, _ = parser.parse_known_args()
+    args, unknown_args = parser.parse_known_args()
 
     # Finally, execute the (sub)command
     args.func(args)
