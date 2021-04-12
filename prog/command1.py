@@ -25,6 +25,7 @@ class Command1:
     def run(self, args):
         logger.info('Executing command1 with --arg1: {}'.format(args.arg1))
         logger.info('--arg2: {}'.format(self.attribute2))
+        logger.debug('*** This is a DEBUG level log ***')
 
     def _setup_func1(self):
         self.attribute1 = common.some_common_var
